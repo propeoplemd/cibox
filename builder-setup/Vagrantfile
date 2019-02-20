@@ -1,0 +1,13 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Builder and provisioner box definition.
+
+Vagrant.configure(2) do |config|
+  config.vm.box = "ubuntu/xenial64"
+  config.vm.provision "shell", path: "builder-setup.sh"
+  # config.vm.synced_folder "/home/valery/work/ffw/cibox-lush-connect", "/vagrant"
+  # Comment previous, and uncomment line if you have NFS support (recommended)
+  config.vm.synced_folder "/home/valery/work/ffw/cibox-lush-connect", "/vagrant"
+  # config.vm.synced_folder "..", "/vagrant", type: "nfs"
+end

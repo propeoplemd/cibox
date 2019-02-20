@@ -21,6 +21,21 @@ github_password: BOT_PASSWORD
 * Run ```sh ./provision``` from console of your desktop machine and wait untill all the software installed onto remote host. If there are errors during install or install been stalled for more than 10 minutes, try to stop ```CTRL-C``` and rerun the command untill it's done.
 * After successful run of ```sh ./provision``` script you should login into ```http://IP:8080``` Jenkins console.
 
+
+#### Jenkins provisioning using virtualbox/vagrant
+[Requirement: vagrant 1.7+]
+* Change settings in config.yml
+* Go to builder-setup folder
+* (Recommended) Regenerate keys in ssh-keys subfolder: `ssh-keygen` (select ssh-keys/id_rsa as the key file name)
+* Prepare target host (VM) as described in the previous section
+* Login to the target host
+* Add contents of `ssh-keys/id_rsa.pub` to ~/.ssh/authorized_keys
+* Logout from the target host
+* Start virtualbox with `vagrant up`
+* Go to /vagrant folder
+* Run ```sh ./provision``` from console of your desktop machine and wait untill all the software installed onto remote host. If there are errors during install or install been stalled for more than 10 minutes, try to stop ```CTRL-C``` and rerun the command untill it's done.
+* After successful run of ```sh ./provision``` script you should login into ```http://IP:8080``` Jenkins console.
+
 #### How to work with project files?
 
 * Run `vagrant up` withing the `FRESH_REPOSITORY` directory and you'll get ready to use virtual machine.

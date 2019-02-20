@@ -1,7 +1,7 @@
 ---
 
 apt_repos:
-  - ppa:ansible/ansible
+  - ppa:ansible/ansible-1.9
   - ppa:duggan/jo
   # See https://github.com/oerdnj/deb.sury.org/wiki/PPA-migration-to-ppa:ondrej-php
   - ppa:ondrej/php

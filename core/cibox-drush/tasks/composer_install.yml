@@ -4,7 +4,7 @@
   sudo_user: "{{ drush_composer_user }}"
 
 - name: Make drush src available globally
-  shell: "rsync -avz --delete /root/.composer/vendor/drush/drush/ /usr/local/src/drush"
+  shell: "rsync -avz --delete $(composer config -g home)/vendor/drush/drush/ /usr/local/src/drush"
   sudo: yes
 
 - name: Adding global link to drush binary
